@@ -1,8 +1,10 @@
 ﻿mod day1;
 mod day2;
+mod day3;
 
 use day1::*;
 use day2::*;
+use day3::*;
 
 pub fn exec(day: i32) {
     match day {
@@ -13,6 +15,9 @@ pub fn exec(day: i32) {
                 arr[i] = fibonacci(i as i32);
             }
             println!("斐波那契数列Fn(10): {:?}", arr);
+           
+            println!("{:?}", Fibonacci::array(10));
+            
             println!();
             println!("*************************九九乘法表**********************");
             multiplication_table();
@@ -24,7 +29,9 @@ pub fn exec(day: i32) {
             println!("必中~！");
         }
         3 => {
-            
+            println!();
+            let mut arr = [3,1,2,5,4];
+            println!("数组排序：{:?}",bubble_sort(&mut arr));
         }
         _ => {
             println!();

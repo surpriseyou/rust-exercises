@@ -16,3 +16,43 @@ pub fn multiplication_table() {
         println!();
     }
 }
+
+#[derive(Debug)]
+pub struct Fibonacci {
+    curr: u32,
+    next: u32,
+}
+
+impl Fibonacci {
+    pub fn new(curr: u32, next: u32) -> Fibonacci {
+        Fibonacci {
+            curr,
+            next,
+        }
+    }
+
+    pub fn array(count: usize) -> Vec<u32> {
+        if count < 1 {
+            ()
+        }
+        let fib = Fibonacci::new(0, 1);
+        let take = fib.take(count - 1);
+        let mut arr = vec![];
+        arr.push(0);
+        for x in take {
+            arr.push(x)
+        }
+        arr
+    }
+}
+
+impl Iterator for Fibonacci {
+    type Item = u32;
+
+    fn next(&mut self) -> Option<Self::Item> {
+        let new_next = self.curr + self.next;
+        self.curr = self.next;
+        self.next = new_next;
+        Some(self.curr)
+    }
+}
