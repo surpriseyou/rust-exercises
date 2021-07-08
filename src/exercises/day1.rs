@@ -1,4 +1,4 @@
-﻿pub fn fibonacci(val: i32) -> i32 {
+pub fn fibonacci(val: i32) -> i32 {
     let mut val = val;
     if val <= 1 {
         val
@@ -25,10 +25,7 @@ pub struct Fibonacci {
 
 impl Fibonacci {
     pub fn new(curr: u32, next: u32) -> Fibonacci {
-        Fibonacci {
-            curr,
-            next,
-        }
+        Fibonacci { curr, next }
     }
 
     pub fn array(count: usize) -> Vec<u32> {

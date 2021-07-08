@@ -1,9 +1,10 @@
 mod exercises;
+
+use colorful::{Color, Colorful};
 use std::string::*;
 
-
 fn main() {
-    println!("Hello, Rust!");
+    println!("{}", "Hello world".green());
     println!();
     let stdin = std::io::stdin();
     let mut str = String::new();
